@@ -71,6 +71,27 @@
   .col-body p + p { margin-top: 18px; }
   .col-body strong { color: var(--charcoal); font-weight: 500; }
 
+  /* MAKER SECTION */
+  .maker-section {
+    background: var(--cream);
+    padding: 100px 80px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .maker-inner { max-width: 1200px; margin: 0 auto; }
+  .maker-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 40px; }
+  .maker-tag {
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+    background: white;
+    color: var(--gc-green);
+    border: 1px solid rgba(0,101,84,0.15);
+  }
+
   /* INSIGHT CARDS */
   .insights-section { padding: 0 80px 100px; max-width: 1200px; margin: 0 auto; }
   .insight-stack { display: flex; flex-direction: column; gap: 2px; }
@@ -225,6 +246,8 @@
 
     /* Two col */
     .two-col { grid-template-columns: 1fr; gap: 28px; }
+
+    .maker-section { padding: 60px 28px; }
   }
 
   @media (max-width: 480px) {
@@ -324,6 +347,37 @@
     <div class="col-body">
       <p>Through building a youth sports brand since 2023, I know firsthand that regional sponsors have no clear path onto the GameChanger platform today. There is a channel of passionate, community-rooted sponsors that the current advertising product does not serve.</p>
       <p>Cynthia built Walmart+. She understands distribution channel strategy at scale. This is a channel worth building — and I understand both the engineering and the brand side of what that takes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="maker-section">
+  <div class="maker-inner">
+    <div class="section-label">Battle Juice · Built by hand</div>
+    <h2 class="section-title">A one-person brand studio since 2023.</h2>
+    <div class="two-col">
+      <div class="col-body">
+        <p>When I started Battle Juice, I hadn't touched Photoshop, run a Shopify store, or developed a beverage formulation. I learned all of it self-taught — the same way I learned to code.</p>
+        <p>I built <strong>Claude workflows</strong> for creative production and use <strong>AI image and video generation</strong> where it accelerates the work. The characters, packaging, and brand world were still created with real elbow grease — illustrated, iterated, and produced by me.</p>
+      </div>
+      <div class="col-body">
+        <p>I developed the <strong>product formulations</strong> and the full branding system. I built the website, rewards program, merch line, and e-commerce stack end to end. No external design agency. No vendor pretending to be a brand.</p>
+        <p>That matters for GameChanger: I understand what it takes to stand up a brand experience — creative, commercial, and technical — because I've done it on a real P&L.</p>
+      </div>
+    </div>
+    <div class="maker-tags">
+      <span class="maker-tag">Photoshop</span>
+      <span class="maker-tag">Illustrator</span>
+      <span class="maker-tag">Claude Workflows</span>
+      <span class="maker-tag">AI Image & Video</span>
+      <span class="maker-tag">Shopify</span>
+      <span class="maker-tag">Character Design</span>
+      <span class="maker-tag">Packaging</span>
+      <span class="maker-tag">Formulations</span>
+      <span class="maker-tag">Branding</span>
+      <span class="maker-tag">Website</span>
+      <span class="maker-tag">Rewards System</span>
+      <span class="maker-tag">Merch</span>
     </div>
   </div>
 </section>
