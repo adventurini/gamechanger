@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering — Anthony × GameChanger</title>
+<meta name="description" content="Anthony — Senior Backend Engineer candidate for GameChanger. Engineer, founder, and youth sports operator.">
+<link rel="icon" href="assets/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#006554">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Anthony × GameChanger">
+<meta property="og:title" content="Engineering — Anthony × GameChanger">
+<meta property="og:description" content="Senior Backend Engineer · Subscriptions Enablement. Built production systems at scale. Founder inside youth sports.">
+<meta property="og:url" content="https://adventurini.github.io/gamechanger/">
+<meta property="og:image" content="https://adventurini.github.io/gamechanger/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://adventurini.github.io/gamechanger/assets/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gc-green: #006554; --gc-green-light: #00876e;
+    --cream: #f5f0e8; --off-white: #fafaf7;
+    --charcoal: #1a1a1a; --mid: #555; --light: #999; --accent: #00c49a;
+    --code-bg: #0f1923;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased; background: var(--off-white); color: var(--charcoal); overflow-x: hidden; }
+
+  nav { position: fixed; top:0; left:0; right:0; z-index:100; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 64px; background: rgba(250,250,247,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,101,84,0.1); }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.06em; color: var(--gc-green); text-decoration: none; }
+  .nav-logo span { color: var(--charcoal); }
+  .nav-links { display: flex; gap: 8px; }
+  .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--mid); text-decoration: none; padding: 6px 14px; border-radius: 100px; transition: all 0.2s; }
+  .nav-links a:hover { color: var(--gc-green); background: rgba(0,101,84,0.07); }
+  .nav-links a.active { color: var(--gc-green); background: rgba(0,101,84,0.1); }
+  .nav-cta { font-family: 'Bebas Neue', sans-serif; font-size: 13px; font-weight: 700; color: white; background: var(--gc-green); padding: 8px 20px; border-radius: 100px; text-decoration: none; }
+
+  /* HEADER */
+  .page-header { padding: 140px 80px 80px; background: var(--code-bg); }
+  .page-header-inner { max-width: 1200px; margin: 0 auto; }
+  .eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+  .page-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 5vw, 72px); font-weight: 800; line-height: 1; color: white; margin-bottom: 24px; }
+  .page-title em { font-style: normal; color: var(--accent); }
+  .page-subtitle { font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.55); max-width: 600px; }
+
+  /* DEDICATION BAND */
+  .dedication-band { background: var(--gc-green); padding: 24px 80px; }
+  .dedication-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 16px; }
+  .dedication-label { font-family: 'Bebas Neue', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+  .dedication-name { font-family: 'Bebas Neue', sans-serif; font-size: 16px; font-weight: 800; color: white; }
+  .dedication-role { font-size: 13px; color: rgba(255,255,255,0.6); }
+  .sep { color: rgba(255,255,255,0.2); font-size: 20px; }
+
+  /* STACK SECTION */
+  .stack-section { padding: 100px 80px; max-width: 1200px; margin: 0 auto; }
+  .section-label { font-family: 'Bebas Neue', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gc-green); margin-bottom: 16px; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 3vw, 40px); font-weight: 800; line-height: 1.15; color: var(--charcoal); margin-bottom: 48px; }
+  .stack-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .stack-card {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 16px;
+    padding: 28px;
+    transition: all 0.2s;
+  }
+  .stack-card:hover { border-color: var(--gc-green); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,101,84,0.08); }
+  .stack-icon { font-size: 28px; margin-bottom: 14px; }
+  .stack-name { font-family: 'Bebas Neue', sans-serif; font-size: 16px; font-weight: 800; color: var(--charcoal); margin-bottom: 8px; }
+  .stack-desc { font-size: 13px; line-height: 1.55; color: var(--mid); }
+  .stack-level {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.06em;
+    background: rgba(0,101,84,0.08);
+    color: var(--gc-green);
+  }
+
+  /* CODE BLOCK SECTION */
+  .code-section { background: var(--code-bg); padding: 100px 80px; }
+  .code-section-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .code-text .eyebrow { color: var(--accent); }
+  .code-text .section-title { color: white; font-size: 32px; }
+  .code-text-body { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.6); margin-top: 24px; }
+  .code-text-body p + p { margin-top: 16px; }
+  .code-text-body strong { color: white; font-weight: 500; }
+  .code-block {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .code-header { padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 8px; }
+  .code-dot { width: 12px; height: 12px; border-radius: 50%; }
+  .code-filename { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.3); margin-left: 8px; }
+  .code-body { padding: 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.8; }
+  .c-keyword { color: #79b8ff; }
+  .c-fn { color: var(--accent); }
+  .c-string { color: #9ecbff; }
+  .c-comment { color: rgba(255,255,255,0.3); font-style: italic; }
+  .c-var { color: #ffab70; }
+  .c-num { color: #f97583; }
+  .c-white { color: rgba(255,255,255,0.85); }
+
+  /* WHAT I BUILD SECTION */
+  .build-section { padding: 100px 80px; max-width: 1200px; margin: 0 auto; }
+  .build-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; }
+  .build-card {
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 20px;
+    padding: 40px;
+    transition: all 0.2s;
+  }
+  .build-card:hover { border-color: var(--gc-green); }
+  .build-num { font-family: 'Bebas Neue', sans-serif; font-size: 13px; font-weight: 700; color: var(--gc-green); letter-spacing: 0.1em; margin-bottom: 16px; }
+  .build-title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; font-weight: 800; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; }
+  .build-body { font-size: 15px; line-height: 1.7; color: var(--mid); }
+
+  .page-footer { padding: 60px 80px; display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(0,0,0,0.08); }
+  .footer-left { font-family: 'Bebas Neue', sans-serif; font-size: 13px; font-weight: 700; color: var(--gc-green); }
+  .footer-left span { color: var(--light); font-weight: 400; font-family: 'DM Sans', sans-serif; display: block; margin-top: 4px; font-size: 13px; }
+  .footer-nav { display: flex; gap: 24px; }
+  .footer-nav a { font-size: 13px; color: var(--light); text-decoration: none; }
+  .footer-nav a:hover { color: var(--gc-green); }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+
+    /* Hero - index */
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 80px 28px 56px; }
+    .hero-right { min-height: 380px; }
+    .hero-photo { width: 80%; max-width: 300px; }
+    .hero-badge { top: 24px; left: 20px; padding: 10px 14px; }
+    .hero-badge2 { bottom: 24px; right: 16px; padding: 10px 14px; }
+    .hero-badge-val, .hero-badge2-val { font-size: 13px; }
+    .hero-stats { gap: 20px; flex-wrap: wrap; }
+    .stat-num { font-size: 22px; }
+
+    /* Intro section */
+    .intro-section { grid-template-columns: 1fr; gap: 24px; padding: 60px 28px; }
+
+    /* Roles strip */
+    .roles-strip { padding: 56px 28px; }
+    .roles-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* GC context */
+    .gc-context { padding: 60px 28px; }
+    .gc-numbers { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .gc-num { font-size: 36px; }
+
+    /* Page header (about/engineering/brand) */
+    .page-header { padding: 100px 28px 56px; }
+    .page-header-inner { grid-template-columns: 1fr; gap: 24px; }
+    .header-left, .header-right { padding: 48px 28px; }
+    .page-header.split { grid-template-columns: 1fr; }
+
+    /* Split header (brand page) */
+    .page-header { grid-template-columns: 1fr !important; }
+
+    /* Timeline */
+    .timeline-section { padding: 60px 28px; }
+    .timeline::before { left: 0; }
+    .timeline-item { padding-left: 32px; padding-bottom: 48px; }
+
+    /* Traits */
+    .traits-section { padding: 56px 28px; }
+    .traits-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Stack */
+    .stack-section { padding: 60px 28px; }
+    .stack-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* Code section */
+    .code-section { padding: 60px 28px; }
+    .code-section-inner { grid-template-columns: 1fr; gap: 48px; }
+    .code-body { font-size: 11px; padding: 16px; overflow-x: auto; }
+
+    /* Build section */
+    .build-section { padding: 60px 28px; }
+    .build-grid { grid-template-columns: 1fr; }
+
+    /* Insight cards */
+    .insights-section { padding: 0 28px 60px; }
+    .insight-card { grid-template-columns: 1fr; gap: 0; padding: 28px; }
+    .insight-num { font-size: 28px; margin-bottom: 12px; }
+
+    /* Diagram */
+    .diagram-section { padding: 60px 28px; }
+    .diagram-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Vision page */
+    .vision-hero { padding: 110px 28px 60px; }
+    .leadership-section { padding: 56px 28px; }
+    .leadership-grid { grid-template-columns: 1fr; gap: 20px; }
+    .opportunity { padding: 28px 28px 0; }
+    .opp-block { padding: 40px 28px; }
+    .opp-number { font-size: 48px; top: 20px; right: 24px; }
+    .market-section { padding: 60px 28px; }
+    .market-stats { grid-template-columns: 1fr; gap: 36px; }
+    .mstat-num { font-size: 48px; }
+    .close-cta { padding: 80px 28px; }
+    .market-quote { font-size: 18px; }
+
+    /* Dedication band */
+    .dedication-band { padding: 20px 28px; }
+    .dedication-inner { flex-wrap: wrap; gap: 8px; }
+
+    /* Footer */
+    .page-footer { padding: 40px 28px; flex-direction: column; gap: 24px; align-items: flex-start; }
+
+    /* Pivot callout */
+    .pivot-callout { padding: 32px 24px; }
+
+    /* Section divider */
+    .section-divider { padding: 60px 28px; }
+
+    /* Two col */
+    .two-col { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  @media (max-width: 480px) {
+    .stack-grid { grid-template-columns: 1fr; }
+    .gc-numbers { grid-template-columns: 1fr; }
+    .hero-name { font-size: 42px; }
+    .vision-title { font-size: 42px; }
+    .opp-title { font-size: 24px; }
+    .cta-title { font-size: 36px; }
+    .page-title { font-size: 36px; }
+    .page-title-white { font-size: 36px; }
+  }
+
+
+
+  .nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gc-green, #006554);
+    padding: 4px;
+  }
+  @media (max-width: 768px) {
+    .nav-hamburger { display: flex; align-items: center; }
+    .nav-cta { display: none; }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: white;
+      flex-direction: column;
+      padding: 16px 20px 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      gap: 4px;
+      z-index: 99;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .nav-links.nav-open { display: flex; }
+    .nav-links a {
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Anthony<span> × GC</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="engineering.html" class="active">Engineering</a>
+    <a href="brand.html">Brand & Marketing</a>
+    <a href="vision.html">Vision</a>
+  </div>
+  <a href="vision.html" class="nav-cta">The Pitch →</a>
+
+  <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')" aria-label="Menu">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect y="3" width="22" height="2" rx="1" fill="currentColor"/><rect y="10" width="22" height="2" rx="1" fill="currentColor"/><rect y="17" width="22" height="2" rx="1" fill="currentColor"/></svg>
+  </button>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="eyebrow">Technical Capability</div>
+    <h1 class="page-title">Senior Backend Engineer,<br><em>Subscriptions.</em></h1>
+    <p class="page-subtitle">The open Subscriptions Enablement role calls for TypeScript, Node.js, Redis, PostgreSQL, and AWS. That is exactly the stack I built production systems on at Riverguide — and the foundation I want to keep building on at GameChanger.</p>
+  </div>
+</div>
+
+<div class="dedication-band">
+  <div class="dedication-inner">
+    <div class="dedication-label">In service of</div>
+    <div class="sep">—</div>
+    <div>
+      <div class="dedication-name">Vivek Bedi</div>
+      <div class="dedication-role">Chief Product & Technology Officer · GameChanger</div>
+    </div>
+  </div>
+</div>
+
+<section class="stack-section">
+  <div class="section-label">The Stack</div>
+  <h2 class="section-title">The stack. Matched to the role.</h2>
+  <div class="stack-grid">
+    <div class="stack-card">
+      <div class="stack-icon">⚡</div>
+      <div class="stack-name">Node.js & TypeScript</div>
+      <div class="stack-desc">Backend services, API design, event-driven architecture, and data pipeline orchestration. TypeScript across the full backend at Riverguide.</div>
+      <span class="stack-level">Expert</span>
+    </div>
+    <div class="stack-card">
+      <div class="stack-icon">⚛️</div>
+      <div class="stack-name">React / Next.js</div>
+      <div class="stack-desc">Full frontend ownership. SSR, ISR, dynamic routing, performance optimization, and component architecture.</div>
+      <span class="stack-level">Expert</span>
+    </div>
+    <div class="stack-card">
+      <div class="stack-icon">⚡</div>
+      <div class="stack-name">Redis</div>
+      <div class="stack-desc">Caching layers, session management, and queue-backed async processing in production Node.js services.</div>
+      <span class="stack-level">Production</span>
+    </div>
+    <div class="stack-card">
+      <div class="stack-icon">🔗</div>
+      <div class="stack-name">GraphQL</div>
+      <div class="stack-desc">Designed and consumed GraphQL APIs from scratch. Schema design, resolvers, subscriptions, and client-side caching.</div>
+      <span class="stack-level">Expert</span>
+    </div>
+    <div class="stack-card">
+      <div class="stack-icon">☁️</div>
+      <div class="stack-name">AWS</div>
+      <div class="stack-desc">Infrastructure design, Lambda, RDS, S3, CloudFront, IAM, and deployment pipeline management.</div>
+      <span class="stack-level">Expert</span>
+    </div>
+    <div class="stack-card">
+      <div class="stack-icon">🗃️</div>
+      <div class="stack-name">PostgreSQL & CTEs</div>
+      <div class="stack-desc">Advanced SQL including complex CTEs, window functions, performance tuning, and schema design for high-volume data ingestion.</div>
+      <span class="stack-level">Expert</span>
+    </div>
+    <div class="stack-card">
+      <div class="stack-icon">🛒</div>
+      <div class="stack-name">Shopify / E-commerce</div>
+      <div class="stack-desc">Custom storefront development with Shopify Storefront API, integrated with Next.js for the Battle Juice launch.</div>
+      <span class="stack-level">Production</span>
+    </div>
+    <div class="stack-card">
+      <div class="stack-icon">🔄</div>
+      <div class="stack-name">Data Pipelines</div>
+      <div class="stack-desc">Designed automated daily ingestion systems pulling from external APIs (Amazon), transforming, and surfacing actionable data.</div>
+      <span class="stack-level">Production</span>
+    </div>
+    <div class="stack-card">
+      <div class="stack-icon">🏗️</div>
+      <div class="stack-name">Architecture Design</div>
+      <div class="stack-desc">Full system design ownership — from schema to frontend to deployment. Built to scale, not just to ship.</div>
+      <span class="stack-level">Lead</span>
+    </div>
+  </div>
+</section>
+
+<section class="code-section">
+  <div class="code-section-inner">
+    <div class="code-text">
+      <div class="eyebrow">What I built at Riverguide</div>
+      <h2 class="section-title">The stack they need. The background to use it.</h2>
+      <div class="code-text-body">
+        <p>The Riverguide platform was built on the same stack GameChanger's backend APIs run on: <strong>TypeScript, Node.js, PostgreSQL, and AWS</strong>. I designed and built the data ingestion pipelines, the API layer, and the operational dashboards that 50+ account managers depended on daily.</p>
+        <p>I owned schema design, API architecture, observability, reliability, and deployment infrastructure — the same surface area the Subscriptions Enablement role covers. I did it largely alone for the first two years.</p>
+        <p>When the parent company closed, the system kept running without active maintenance. Stability and observability were built in — not bolted on. That is the standard I hold myself to.</p>
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="code-header">
+        <div class="code-dot" style="background:#ff5f56"></div>
+        <div class="code-dot" style="background:#ffbd2e"></div>
+        <div class="code-dot" style="background:#27c93f"></div>
+        <div class="code-filename">pipeline.ts</div>
+      </div>
+      <div class="code-body">
+        <div><span class="c-comment">// Daily Amazon data ingestion pipeline</span></div>
+        <div><span class="c-keyword">async function</span> <span class="c-fn">ingestSellerData</span><span class="c-white">(</span><span class="c-var">sellerId</span><span class="c-white">: string) {</span></div>
+        <div><span class="c-white">  </span><span class="c-keyword">const</span> <span class="c-var">raw</span> <span class="c-white">= </span><span class="c-keyword">await</span> <span class="c-fn">fetchAmazonAPI</span><span class="c-white">({</span></div>
+        <div><span class="c-white">    sellerId,</span></div>
+        <div><span class="c-white">    endpoints: [</span><span class="c-string">'listings'</span><span class="c-white">, </span><span class="c-string">'inventory'</span><span class="c-white">, </span><span class="c-string">'ads'</span><span class="c-white">]</span></div>
+        <div><span class="c-white">  });</span></div>
+        <div>&nbsp;</div>
+        <div><span class="c-comment">  // Transform with CTE for deduplication</span></div>
+        <div><span class="c-keyword">  await</span> <span class="c-fn">db.query</span><span class="c-white">(</span><span class="c-string">`</span></div>
+        <div><span class="c-string">    WITH latest_listings AS (</span></div>
+        <div><span class="c-string">      SELECT DISTINCT ON (asin)</span></div>
+        <div><span class="c-string">        asin, price, rank, status,</span></div>
+        <div><span class="c-string">        ingested_at</span></div>
+        <div><span class="c-string">      FROM staging_listings</span></div>
+        <div><span class="c-string">      ORDER BY asin, ingested_at DESC</span></div>
+        <div><span class="c-string">    )</span></div>
+        <div><span class="c-string">    INSERT INTO listings SELECT * FROM latest_listings</span></div>
+        <div><span class="c-string">    ON CONFLICT (asin) DO UPDATE...</span></div>
+        <div><span class="c-string">  `</span><span class="c-white">);</span></div>
+        <div><span class="c-white">}</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="build-section">
+  <div class="section-label">The Role + Beyond</div>
+  <h2 class="section-title">Start with Subscriptions. Grow from there.</h2>
+  <div class="build-grid">
+    <div class="build-card">
+      <div class="build-num">01 / PLATFORM</div>
+      <div class="build-title">Brand account infrastructure</div>
+      <div class="build-body">GameChanger already has team accounts, organization accounts, and fan accounts. A brand account tier — with its own data model, permission system, and content publishing pipeline — is a natural extension of existing infrastructure that opens up an entirely new category of platform participant.</div>
+    </div>
+    <div class="build-card">
+      <div class="build-num">02 / DATA</div>
+      <div class="build-title">Sponsor analytics and attribution</div>
+      <div class="build-body">If a brand sponsors a team and streams their games, every view is attributable. I would build the data layer that closes that loop — impressions from stream overlays, follow-through on in-app activations, and location-tied events — giving regional sponsors the measurement tools that national brands already expect.</div>
+    </div>
+    <div class="build-card">
+      <div class="build-num">03 / COMPLIANCE</div>
+      <div class="build-title">COPPA-compliant NIL consent architecture</div>
+      <div class="build-body">Youth NIL is fundamentally a consent and data architecture problem. The permissioned relationship graph — athlete profile, parental approval chain, brand match flow — needs to satisfy COPPA, protect minors, and still create genuine value. GameChanger already has the verified family relationships to do this right.</div>
+    </div>
+    <div class="build-card">
+      <div class="build-num">04 / SCALE</div>
+      <div class="build-title">Supporting 10M+ games with room to grow</div>
+      <div class="build-body">At 9% market share, the infrastructure needs to handle 10x growth without a rearchitecture. I design systems with that horizon in mind — for the scale that comes next, not just the scale that exists today.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="page-footer">
+    <div class="footer-left">Anthony × GameChanger <span>Rochester / Shelby Township, Michigan · 2026</span></div>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="brand.html">Brand</a>
+      <a href="vision.html">Vision</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

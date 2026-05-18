@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthony × GameChanger</title>
+<meta name="description" content="Anthony — Senior Backend Engineer candidate for GameChanger Subscriptions Enablement. Engineer, founder, and youth sports operator.">
+<link rel="icon" href="assets/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#006554">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Anthony × GameChanger">
+<meta property="og:title" content="Anthony × GameChanger">
+<meta property="og:description" content="Senior Backend Engineer · Subscriptions Enablement. Built production systems at scale. Founder inside youth sports.">
+<meta property="og:url" content="https://adventurini.github.io/gamechanger/">
+<meta property="og:image" content="https://adventurini.github.io/gamechanger/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anthony × GameChanger">
+<meta name="twitter:description" content="Senior Backend Engineer · Subscriptions Enablement. Built production systems at scale.">
+<meta name="twitter:image" content="https://adventurini.github.io/gamechanger/assets/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gc-green: #006554;
+    --gc-green-light: #00876e;
+    --gc-green-dark: #004a3d;
+    --cream: #f5f0e8;
+    --off-white: #fafaf7;
+    --charcoal: #1a1a1a;
+    --mid: #555;
+    --light: #999;
+    --accent: #00c49a;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: var(--off-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    height: 64px;
+    background: rgba(250,250,247,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,101,84,0.1);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    color: var(--gc-green);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--charcoal); }
+  .nav-links { display: flex; gap: 8px; }
+  .nav-links a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mid);
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 100px;
+    transition: all 0.2s;
+  }
+  .nav-links a:hover { color: var(--gc-green); background: rgba(0,101,84,0.07); }
+  .nav-links a.active { color: var(--gc-green); background: rgba(0,101,84,0.1); }
+  .nav-cta {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    background: var(--gc-green);
+    padding: 8px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--gc-green-light); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 64px;
+  }
+  .hero-left {
+    background: var(--gc-green);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px 80px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 300px; height: 300px;
+    background: rgba(0,196,154,0.12);
+    border-radius: 50%;
+  }
+  .eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 24px;
+  }
+  .hero-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 5.5vw, 80px);
+    font-weight: 800;
+    line-height: 0.95;
+    color: white;
+    margin-bottom: 32px;
+    position: relative; z-index:1;
+  }
+  .hero-name em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  .hero-tagline {
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.75);
+    max-width: 420px;
+    margin-bottom: 48px;
+    position: relative; z-index:1;
+  }
+  .hero-actions { display: flex; gap: 16px; align-items: center; position: relative; z-index:1; }
+  .btn-primary {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gc-green);
+    background: white;
+    padding: 14px 28px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover { background: var(--accent); color: white; }
+  .btn-ghost {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 8px;
+    transition: color 0.2s;
+  }
+  .btn-ghost:hover { color: white; }
+  .btn-ghost svg { transition: transform 0.2s; }
+  .btn-ghost:hover svg { transform: translateX(4px); }
+
+
+  /* HERO RIGHT - PHOTO */
+  .hero-right {
+    background: var(--gc-green-dark);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 32px;
+  }
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 10%, rgba(0,196,154,0.15) 0%, transparent 55%);
+    z-index: 0;
+  }
+  .hero-photo-wrap {
+    position: relative;
+    z-index: 1;
+    width: min(88%, 420px);
+    max-width: 420px;
+    align-self: center;
+  }
+  .hero-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: bottom;
+  }
+  .hero-badge {
+    position: absolute;
+    top: 32px; left: 32px;
+    background: white;
+    border-radius: 14px;
+    padding: 14px 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    z-index: 3;
+  }
+  .hero-badge-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .hero-badge-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--gc-green);
+  }
+  .hero-badge2 {
+    position: absolute;
+    bottom: 32px; right: 32px;
+    background: var(--accent);
+    border-radius: 14px;
+    padding: 14px 18px;
+    z-index: 3;
+  }
+  .hero-badge2-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .hero-badge2-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--charcoal);
+  }
+
+  /* HERO STATS ROW */
+  .hero-stats {
+    display: flex; gap: 32px;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    position: relative; z-index:1;
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+  }
+
+  /* INTRO WRAP */
+  .intro-wrap {
+    padding: 0 80px;
+    background: var(--off-white);
+  }
+
+    /* SECTION: INTRO */
+  .intro-section {
+    padding: 100px 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gc-green);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--charcoal);
+  }
+  .section-body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--mid);
+  }
+  .section-body p + p { margin-top: 20px; }
+  .section-body strong { color: var(--charcoal); font-weight: 500; }
+
+  /* ROLES STRIP */
+  .roles-strip {
+    background: var(--gc-green);
+    padding: 64px 80px;
+  }
+  .roles-strip-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .roles-strip-header {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 40px;
+  }
+  .roles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .role-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 32px;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+    display: block;
+  }
+  .role-card:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-3px);
+  }
+  .role-icon {
+    width: 44px; height: 44px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+  .role-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 8px;
+  }
+  .role-person {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 16px;
+    letter-spacing: 0.03em;
+  }
+  .role-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.6);
+  }
+  .role-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* GC CONTEXT */
+  .gc-context {
+    padding: 100px 80px;
+    background: var(--charcoal);
+  }
+  .gc-context-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .gc-numbers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+  }
+  .gc-num-item {}
+  .gc-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .gc-num-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+  .gc-context-text {
+    max-width: 680px;
+  }
+  .gc-context-text .section-label { color: var(--accent); }
+  .gc-context-text .section-title { color: white; }
+
+  /* CTA FOOTER */
+  .page-footer {
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+  .footer-left {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gc-green);
+  }
+  .footer-left span { color: var(--light); font-weight: 400; font-family: 'DM Sans', sans-serif; display: block; margin-top: 4px; font-size: 13px; }
+  .footer-nav { display: flex; gap: 24px; }
+  .footer-nav a { font-size: 13px; color: var(--light); text-decoration: none; }
+  .footer-nav a:hover { color: var(--gc-green); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(24px); }
+    to { opacity:1; transform:translateY(0); }
+  }
+  .hero-name { animation: fadeUp 0.7s ease forwards; }
+  .hero-tagline { animation: fadeUp 0.7s 0.15s ease both; }
+  .hero-actions { animation: fadeUp 0.7s 0.3s ease both; }
+  .hero-stats { animation: fadeUp 0.7s 0.45s ease both; }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+
+    /* Hero - index */
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .hero-right {
+      order: 1;
+      min-height: auto;
+      padding: 80px 24px 28px;
+      background: var(--gc-green);
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .hero-photo-wrap { width: min(72vw, 280px); max-width: 280px; }
+    .hero-left {
+      order: 2;
+      padding: 32px 28px 52px;
+    }
+    .hero-badge { top: 76px; left: 20px; padding: 10px 14px; }
+    .hero-badge2 { bottom: 20px; right: 16px; padding: 10px 14px; }
+    .intro-wrap { padding: 0 28px; }
+    .intro-wrap .intro-section { padding: 56px 0; grid-template-columns: 1fr; gap: 24px; }
+    .hero-badge-val, .hero-badge2-val { font-size: 13px; }
+    .hero-stats { gap: 20px; flex-wrap: wrap; margin-top: 40px; padding-top: 32px; }
+    .stat-num { font-size: 22px; }
+
+    /* Roles strip */
+    .roles-strip { padding: 56px 28px; }
+    .roles-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* GC context */
+    .gc-context { padding: 60px 28px; }
+    .gc-numbers { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .gc-num { font-size: 36px; }
+
+    /* Page header (about/engineering/brand) */
+    .page-header { padding: 100px 28px 56px; }
+    .page-header-inner { grid-template-columns: 1fr; gap: 24px; }
+    .header-left, .header-right { padding: 48px 28px; }
+    .page-header.split { grid-template-columns: 1fr; }
+
+    /* Split header (brand page) */
+    .page-header { grid-template-columns: 1fr !important; }
+
+    /* Timeline */
+    .timeline-section { padding: 60px 28px; }
+    .timeline::before { left: 0; }
+    .timeline-item { padding-left: 32px; padding-bottom: 48px; }
+
+    /* Traits */
+    .traits-section { padding: 56px 28px; }
+    .traits-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Stack */
+    .stack-section { padding: 60px 28px; }
+    .stack-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* Code section */
+    .code-section { padding: 60px 28px; }
+    .code-section-inner { grid-template-columns: 1fr; gap: 48px; }
+    .code-body { font-size: 11px; padding: 16px; overflow-x: auto; }
+
+    /* Build section */
+    .build-section { padding: 60px 28px; }
+    .build-grid { grid-template-columns: 1fr; }
+
+    /* Insight cards */
+    .insights-section { padding: 0 28px 60px; }
+    .insight-card { grid-template-columns: 1fr; gap: 0; padding: 28px; }
+    .insight-num { font-size: 28px; margin-bottom: 12px; }
+
+    /* Diagram */
+    .diagram-section { padding: 60px 28px; }
+    .diagram-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Vision page */
+    .vision-hero { padding: 110px 28px 60px; }
+    .leadership-section { padding: 56px 28px; }
+    .leadership-grid { grid-template-columns: 1fr; gap: 20px; }
+    .opportunity { padding: 28px 28px 0; }
+    .opp-block { padding: 40px 28px; }
+    .opp-number { font-size: 48px; top: 20px; right: 24px; }
+    .market-section { padding: 60px 28px; }
+    .market-stats { grid-template-columns: 1fr; gap: 36px; }
+    .mstat-num { font-size: 48px; }
+    .close-cta { padding: 80px 28px; }
+    .market-quote { font-size: 18px; }
+
+    /* Dedication band */
+    .dedication-band { padding: 20px 28px; }
+    .dedication-inner { flex-wrap: wrap; gap: 8px; }
+
+    /* Footer */
+    .page-footer { padding: 40px 28px; flex-direction: column; gap: 24px; align-items: flex-start; }
+
+    /* Pivot callout */
+    .pivot-callout { padding: 32px 24px; }
+
+    /* Section divider */
+    .section-divider { padding: 60px 28px; }
+
+    /* Two col */
+    .two-col { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  @media (max-width: 480px) {
+    .stack-grid { grid-template-columns: 1fr; }
+    .gc-numbers { grid-template-columns: 1fr; }
+    .hero-name { font-size: 42px; }
+    .vision-title { font-size: 42px; }
+    .opp-title { font-size: 24px; }
+    .cta-title { font-size: 36px; }
+    .page-title { font-size: 36px; }
+    .page-title-white { font-size: 36px; }
+  }
+
+
+
+  .nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gc-green, #006554);
+    padding: 4px;
+  }
+  @media (max-width: 768px) {
+    .nav-hamburger { display: flex; align-items: center; }
+    .nav-cta { display: none; }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: white;
+      flex-direction: column;
+      padding: 16px 20px 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      gap: 4px;
+      z-index: 99;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .nav-links.nav-open { display: flex; }
+    .nav-links a {
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Anthony<span> × GC</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="engineering.html">Engineering</a>
+    <a href="brand.html">Brand & Marketing</a>
+    <a href="vision.html">Vision</a>
+  </div>
+  <a href="vision.html" class="nav-cta">The Pitch →</a>
+
+  <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')" aria-label="Menu">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect y="3" width="22" height="2" rx="1" fill="currentColor"/><rect y="10" width="22" height="2" rx="1" fill="currentColor"/><rect y="17" width="22" height="2" rx="1" fill="currentColor"/></svg>
+  </button>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Software Engineering · GameChanger · 2026</div>
+    <h1 class="hero-name">Built for<br><em>this.</em></h1>
+    <p class="hero-tagline">I am applying for the Senior Backend Software Engineer, Subscriptions Enablement role. The stack matches exactly what I built at Riverguide. And my background as a founder inside the youth sports ecosystem gives me a perspective on where the platform can go next.</p>
+    <div class="hero-actions">
+      <a href="about.html" class="btn-primary">My Story →</a>
+      <a href="vision.html" class="btn-ghost">See the Vision <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">15K</div>
+        <div class="stat-label">Youth athletes<br>reached on the ground</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">7 yrs</div>
+        <div class="stat-label">Building production<br>systems at scale</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Person team powered<br>by systems I built</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-badge">
+      <div class="hero-badge-label">Currently</div>
+      <div class="hero-badge-val">Founder & Engineer</div>
+    </div>
+    <div class="hero-photo-wrap"><img src="assets/hero-photo.jpg" class="hero-photo" alt="Anthony — founder and engineer"></div>
+    <div class="hero-badge2">
+      <div class="hero-badge2-label">Targeting</div>
+      <div class="hero-badge2-val">GameChanger</div>
+    </div>
+  </div>
+</section>
+
+<section class="intro-wrap">
+  <div class="intro-section">
+    <div>
+      <div class="section-label">Why GameChanger</div>
+      <h2 class="section-title">I know this space from the inside.</h2>
+    </div>
+    <div class="section-body">
+      <p>GameChanger covers <strong>10+ million games a year</strong> across 1 million teams. It crossed $100M in revenue and is targeting $150M. Dick's has repositioned it from a "youth sports app" to a <strong>"live sports media platform."</strong> That language reflects real ambition — and real room to grow.</p>
+      <p>Since 2023 I have been building a brand inside the youth sports world — sponsoring teams, showing up at events, and operating on the ground. I understand what families respond to, what sponsors need from a platform, and where the digital experience still has gaps.</p>
+      <p>I am not just looking for a job. I am looking for the right place to build something I can bring real value and passion into. <strong>GameChanger is that place.</strong></p>
+    </div>
+  </div>
+</section>
+
+<div class="roles-strip">
+  <div class="roles-strip-inner">
+    <div class="roles-strip-header">Where I plug in</div>
+    <div class="roles-grid">
+      <a href="engineering.html" class="role-card">
+        <div class="role-icon">⚙️</div>
+        <div class="role-title">Engineering</div>
+        <div class="role-person">Targeting: Senior Backend Engineer, Subscriptions</div>
+        <div class="role-desc">TypeScript, Node.js, Redis, PostgreSQL, AWS — the exact stack on the job description. Built production systems on this foundation at Riverguide. The Subscriptions role is the entry point; the growth opportunity is what keeps me here.</div>
+        <div class="role-link">See Engineering →</div>
+      </a>
+      <a href="brand.html" class="role-card">
+        <div class="role-icon">📣</div>
+        <div class="role-title">Brand & Marketing</div>
+        <div class="role-person">Supporting Cynthia Kleinbaum Milner · CCO</div>
+        <div class="role-desc">I am a brand founder inside the space GameChanger owns. I know what families respond to, what sponsors need, and where the platform is invisible when it shouldn't be.</div>
+        <div class="role-link">See Brand →</div>
+      </a>
+      <a href="vision.html" class="role-card">
+        <div class="role-icon">🎯</div>
+        <div class="role-title">Strategy & Vision</div>
+        <div class="role-person">Supporting Sameer Ahuja · President</div>
+        <div class="role-desc">Two product opportunities worth exploring: brand presence on the platform, and a COPPA-compliant youth NIL layer. The Subscriptions backend is the foundation both of these would build on.</div>
+        <div class="role-link">See Vision →</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<section class="gc-context">
+  <div class="gc-context-inner">
+    <div class="gc-context-text">
+      <div class="section-label">The Platform</div>
+      <h2 class="section-title">GameChanger is barely getting started.</h2>
+    </div>
+    <div class="gc-numbers">
+      <div class="gc-num-item">
+        <div class="gc-num">10M+</div>
+        <div class="gc-num-label">Games covered annually</div>
+      </div>
+      <div class="gc-num-item">
+        <div class="gc-num">9%</div>
+        <div class="gc-num-label">Estimated market share — the runway is massive</div>
+      </div>
+      <div class="gc-num-item">
+        <div class="gc-num">40%</div>
+        <div class="gc-num-label">CAGR since 2017</div>
+      </div>
+      <div class="gc-num-item">
+        <div class="gc-num">$150M</div>
+        <div class="gc-num-label">Revenue target for 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="page-footer">
+    <div class="footer-left">
+      Anthony × GameChanger
+      <span>Rochester / Shelby Township, Michigan · 2026</span>
+    </div>
+    <div class="footer-nav">
+      <a href="about.html">About</a>
+      <a href="engineering.html">Engineering</a>
+      <a href="brand.html">Brand</a>
+      <a href="vision.html">Vision</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

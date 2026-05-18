@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision — Anthony × GameChanger</title>
+<meta name="description" content="Anthony — Senior Backend Engineer candidate for GameChanger. Engineer, founder, and youth sports operator.">
+<link rel="icon" href="assets/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#006554">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Anthony × GameChanger">
+<meta property="og:title" content="Vision — Anthony × GameChanger">
+<meta property="og:description" content="Senior Backend Engineer · Subscriptions Enablement. Built production systems at scale. Founder inside youth sports.">
+<meta property="og:url" content="https://adventurini.github.io/gamechanger/">
+<meta property="og:image" content="https://adventurini.github.io/gamechanger/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://adventurini.github.io/gamechanger/assets/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gc-green: #006554; --gc-green-light: #00876e;
+    --cream: #f5f0e8; --off-white: #fafaf7;
+    --charcoal: #1a1a1a; --mid: #555; --light: #999; --accent: #00c49a;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased; background: var(--charcoal); color: white; overflow-x: hidden; }
+
+  nav { position: fixed; top:0; left:0; right:0; z-index:100; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 64px; background: rgba(26,26,26,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.06em; color: var(--accent); text-decoration: none; }
+  .nav-logo span { color: white; }
+  .nav-links { display: flex; gap: 8px; }
+  .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.5); text-decoration: none; padding: 6px 14px; border-radius: 100px; transition: all 0.2s; }
+  .nav-links a:hover { color: white; background: rgba(255,255,255,0.08); }
+  .nav-links a.active { color: white; background: rgba(255,255,255,0.1); }
+  .nav-cta { font-family: 'Bebas Neue', sans-serif; font-size: 13px; font-weight: 700; color: var(--charcoal); background: var(--accent); padding: 8px 20px; border-radius: 100px; text-decoration: none; }
+
+  /* HERO */
+  .vision-hero { padding: 160px 80px 100px; max-width: 1200px; margin: 0 auto; }
+  .eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; }
+  .vision-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 6.5vw, 96px); font-weight: 800; line-height: 0.95; margin-bottom: 40px; }
+  .vision-title em { font-style: normal; color: var(--accent); }
+  .vision-lead { font-size: 20px; line-height: 1.65; color: rgba(255,255,255,0.65); max-width: 720px; }
+
+  /* LEADERSHIP CARDS */
+  .leadership-section { background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); padding: 80px; }
+  .leadership-inner { max-width: 1200px; margin: 0 auto; }
+  .leadership-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .leader-card {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 36px;
+    transition: all 0.2s;
+  }
+  .leader-card:hover { border-color: var(--accent); background: rgba(0,196,154,0.04); }
+  .leader-role-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+    background: rgba(0,196,154,0.15);
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .leader-name { font-family: 'Bebas Neue', sans-serif; font-size: 22px; font-weight: 800; color: white; margin-bottom: 6px; }
+  .leader-title { font-size: 13px; color: rgba(255,255,255,0.45); margin-bottom: 24px; }
+  .leader-body { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.6); }
+  .leader-body strong { color: white; font-weight: 500; }
+  .leader-prev { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; color: rgba(255,255,255,0.3); }
+
+  /* SECTION DIVIDER */
+  .section-divider { padding: 80px; max-width: 1200px; margin: 0 auto; }
+  .section-label { font-family: 'Bebas Neue', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 3vw, 44px); font-weight: 800; line-height: 1.1; color: white; margin-bottom: 48px; }
+
+  /* OPPORTUNITY BLOCKS */
+  .opportunity { padding: 80px; max-width: 1200px; margin: 0 auto; }
+  .opp-block {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 60px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .opp-block::before { content:''; position:absolute; top:-60px; right:-60px; width:300px; height:300px; border-radius:50%; opacity:0.04; }
+  .opp-block.green::before { background: var(--gc-green); }
+  .opp-block.accent::before { background: var(--accent); }
+  .opp-number { font-family: 'Bebas Neue', sans-serif; font-size: 80px; font-weight: 800; color: rgba(255,255,255,0.04); position: absolute; top: 32px; right: 48px; line-height: 1; }
+  .opp-tag { display: inline-block; padding: 5px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em; background: rgba(0,196,154,0.15); color: var(--accent); margin-bottom: 24px; }
+  .opp-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 3vw, 40px); font-weight: 800; color: white; margin-bottom: 24px; line-height: 1.15; max-width: 700px; }
+  .opp-body { font-size: 16px; line-height: 1.75; color: rgba(255,255,255,0.6); max-width: 720px; }
+  .opp-body p + p { margin-top: 18px; }
+  .opp-body strong { color: white; font-weight: 500; }
+  .opp-callout {
+    background: rgba(0,196,154,0.08);
+    border: 1px solid rgba(0,196,154,0.2);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-top: 32px;
+    max-width: 720px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.75);
+  }
+  .opp-callout strong { color: var(--accent); }
+
+  /* MARKET SECTION */
+  .market-section { background: var(--gc-green); padding: 100px 80px; }
+  .market-inner { max-width: 1200px; margin: 0 auto; }
+  .market-inner .section-label { color: rgba(255,255,255,0.5); }
+  .market-inner .section-title { color: white; }
+  .market-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 60px; }
+  .mstat {}
+  .mstat-num { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 4.5vw, 64px); font-weight: 800; color: white; line-height: 1; }
+  .mstat-label { font-size: 15px; color: rgba(255,255,255,0.6); margin-top: 10px; line-height: 1.4; }
+  .mstat-note { font-size: 13px; color: rgba(255,255,255,0.35); margin-top: 6px; }
+  .market-quote {
+    margin-top: 64px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(20px, 2.5vw, 32px);
+    font-weight: 700;
+    line-height: 1.4;
+    color: white;
+    max-width: 800px;
+  }
+  .market-quote cite { display: block; font-family: 'DM Sans', sans-serif; font-size: 14px; color: rgba(255,255,255,0.45); font-style: normal; font-weight: 400; margin-top: 16px; }
+
+  /* CLOSE CTA */
+  .close-cta { padding: 120px 80px; max-width: 1200px; margin: 0 auto; text-align: center; }
+  .cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 5vw, 72px); font-weight: 800; line-height: 1.05; margin-bottom: 32px; }
+  .cta-title em { font-style: normal; color: var(--accent); }
+  .cta-body { font-size: 18px; line-height: 1.65; color: rgba(255,255,255,0.55); max-width: 560px; margin: 0 auto 48px; }
+  .cta-btn { display: inline-block; font-family: 'Bebas Neue', sans-serif; font-size: 16px; font-weight: 700; color: var(--charcoal); background: var(--accent); padding: 18px 40px; border-radius: 100px; text-decoration: none; transition: all 0.2s; }
+  .cta-btn:hover { background: white; }
+  .cta-sub { margin-top: 24px; font-size: 14px; color: rgba(255,255,255,0.3); }
+
+  .page-footer { padding: 60px 80px; display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.08); }
+  .footer-left { font-family: 'Bebas Neue', sans-serif; font-size: 13px; font-weight: 700; color: var(--accent); }
+  .footer-left span { color: rgba(255,255,255,0.3); font-weight: 400; font-family: 'DM Sans', sans-serif; display: block; margin-top: 4px; font-size: 13px; }
+  .footer-nav { display: flex; gap: 24px; }
+  .footer-nav a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; }
+  .footer-nav a:hover { color: white; }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+  .vision-title { animation: fadeUp 0.7s ease forwards; }
+  .vision-lead { animation: fadeUp 0.7s 0.2s ease both; }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+
+    /* Hero - index */
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 80px 28px 56px; }
+    .hero-right { min-height: 380px; }
+    .hero-photo { width: 80%; max-width: 300px; }
+    .hero-badge { top: 24px; left: 20px; padding: 10px 14px; }
+    .hero-badge2 { bottom: 24px; right: 16px; padding: 10px 14px; }
+    .hero-badge-val, .hero-badge2-val { font-size: 13px; }
+    .hero-stats { gap: 20px; flex-wrap: wrap; }
+    .stat-num { font-size: 22px; }
+
+    /* Intro section */
+    .intro-section { grid-template-columns: 1fr; gap: 24px; padding: 60px 28px; }
+
+    /* Roles strip */
+    .roles-strip { padding: 56px 28px; }
+    .roles-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* GC context */
+    .gc-context { padding: 60px 28px; }
+    .gc-numbers { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .gc-num { font-size: 36px; }
+
+    /* Page header (about/engineering/brand) */
+    .page-header { padding: 100px 28px 56px; }
+    .page-header-inner { grid-template-columns: 1fr; gap: 24px; }
+    .header-left, .header-right { padding: 48px 28px; }
+    .page-header.split { grid-template-columns: 1fr; }
+
+    /* Split header (brand page) */
+    .page-header { grid-template-columns: 1fr !important; }
+
+    /* Timeline */
+    .timeline-section { padding: 60px 28px; }
+    .timeline::before { left: 0; }
+    .timeline-item { padding-left: 32px; padding-bottom: 48px; }
+
+    /* Traits */
+    .traits-section { padding: 56px 28px; }
+    .traits-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Stack */
+    .stack-section { padding: 60px 28px; }
+    .stack-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* Code section */
+    .code-section { padding: 60px 28px; }
+    .code-section-inner { grid-template-columns: 1fr; gap: 48px; }
+    .code-body { font-size: 11px; padding: 16px; overflow-x: auto; }
+
+    /* Build section */
+    .build-section { padding: 60px 28px; }
+    .build-grid { grid-template-columns: 1fr; }
+
+    /* Insight cards */
+    .insights-section { padding: 0 28px 60px; }
+    .insight-card { grid-template-columns: 1fr; gap: 0; padding: 28px; }
+    .insight-num { font-size: 28px; margin-bottom: 12px; }
+
+    /* Diagram */
+    .diagram-section { padding: 60px 28px; }
+    .diagram-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Vision page */
+    .vision-hero { padding: 110px 28px 60px; }
+    .leadership-section { padding: 56px 28px; }
+    .leadership-grid { grid-template-columns: 1fr; gap: 20px; }
+    .opportunity { padding: 28px 28px 0; }
+    .opp-block { padding: 40px 28px; }
+    .opp-number { font-size: 48px; top: 20px; right: 24px; }
+    .market-section { padding: 60px 28px; }
+    .market-stats { grid-template-columns: 1fr; gap: 36px; }
+    .mstat-num { font-size: 48px; }
+    .close-cta { padding: 80px 28px; }
+    .market-quote { font-size: 18px; }
+
+    /* Dedication band */
+    .dedication-band { padding: 20px 28px; }
+    .dedication-inner { flex-wrap: wrap; gap: 8px; }
+
+    /* Footer */
+    .page-footer { padding: 40px 28px; flex-direction: column; gap: 24px; align-items: flex-start; }
+
+    /* Pivot callout */
+    .pivot-callout { padding: 32px 24px; }
+
+    /* Section divider */
+    .section-divider { padding: 60px 28px; }
+
+    /* Two col */
+    .two-col { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  @media (max-width: 480px) {
+    .stack-grid { grid-template-columns: 1fr; }
+    .gc-numbers { grid-template-columns: 1fr; }
+    .hero-name { font-size: 42px; }
+    .vision-title { font-size: 42px; }
+    .opp-title { font-size: 24px; }
+    .cta-title { font-size: 36px; }
+    .page-title { font-size: 36px; }
+    .page-title-white { font-size: 36px; }
+  }
+
+
+
+  .nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--accent, #00c49a);
+    padding: 4px;
+  }
+  @media (max-width: 768px) {
+    .nav-hamburger { display: flex; align-items: center; }
+    .nav-cta { display: none; }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: white;
+      flex-direction: column;
+      padding: 16px 20px 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      gap: 4px;
+      z-index: 99;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .nav-links.nav-open { display: flex; }
+    .nav-links a {
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Anthony<span> × GC</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="engineering.html">Engineering</a>
+    <a href="brand.html">Brand & Marketing</a>
+    <a href="vision.html" class="active">Vision</a>
+  </div>
+  <a href="vision.html" class="nav-cta">The Pitch ↗</a>
+
+  <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')" aria-label="Menu">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect y="3" width="22" height="2" rx="1" fill="currentColor"/><rect y="10" width="22" height="2" rx="1" fill="currentColor"/><rect y="17" width="22" height="2" rx="1" fill="currentColor"/></svg>
+  </button>
+</nav>
+
+<section class="vision-hero">
+  <div class="eyebrow">The Pitch · Sameer, Vivek, Cynthia</div>
+  <h1 class="vision-title">Two opportunities<br>worth building<br><em>now.</em></h1>
+  <p class="vision-lead">I am here primarily for the Senior Backend Software Engineer, Subscriptions Enablement role — and I am fully qualified for it. But I also want to be transparent about the bigger picture I see, because it is part of why GameChanger specifically is where I want to work.</p>
+</section>
+
+<section class="leadership-section">
+  <div class="leadership-inner">
+    <div class="section-label">The leadership team I'm speaking to</div>
+    <div class="leadership-grid">
+      <div class="leader-card">
+        <span class="leader-role-tag">President</span>
+        <div class="leader-name">Sameer Ahuja</div>
+        <div class="leader-title">President, GameChanger · SVP, DICK'S Sporting Goods</div>
+        <div class="leader-body">
+          GameChanger covers more games every month than have been played in the entire history of American professional sports — and sits at roughly 9% market share. The growth opportunity ahead is extraordinary, and I want to contribute to building for it.
+        </div>
+        <div class="leader-prev">prev. Harvard Business School · Columbia Economics · Founder, Dera Capital</div>
+      </div>
+      <div class="leader-card">
+        <span class="leader-role-tag">CPTO</span>
+        <div class="leader-name">Vivek Bedi</div>
+        <div class="leader-title">Chief Product & Technology Officer · GameChanger</div>
+        <div class="leader-body">
+          I am applying for the Subscriptions Enablement role on Vivek's engineering org. The stack — TypeScript, Node.js, Redis, PostgreSQL, AWS — is exactly what I built on at Riverguide. I am ready to contribute on day one, and looking to grow well beyond the role over time.
+        </div>
+        <div class="leader-prev">20+ years building digital platforms at scale</div>
+      </div>
+      <div class="leader-card">
+        <span class="leader-role-tag">CCO</span>
+        <div class="leader-name">Cynthia Kleinbaum Milner</div>
+        <div class="leader-title">Chief Commercial Officer · GameChanger</div>
+        <div class="leader-body">
+          Cynthia built Walmart+. She understands distribution strategy at scale. Every regional brand sponsoring youth sports teams is a potential channel on this platform that the current product doesn't yet serve — and I understand that gap from direct experience since launching Battle Juice in 2025.
+        </div>
+        <div class="leader-prev">prev. CMO MoneyLion · VP Marketing Walmart+ · Bonobos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="opportunity">
+  <div class="section-label">Opportunity 01</div>
+  <div class="opp-block green">
+    <div class="opp-number">01</div>
+    <span class="opp-tag">New Revenue · Platform Extension · Brand Accounts</span>
+    <span class="opp-tag" style="margin-left:8px; background:rgba(0,101,84,0.15); color:#006554;">Subscriptions backbone required</span>
+    <h2 class="opp-title">Give sponsors a native presence — not just an ad unit.</h2>
+    <div class="opp-body">
+      <p>GameChanger's current advertising product — placements via DICK'S Media on the home screen and pre-stream — serves national brands well. But thousands of regional and local brands are already physically present at youth sports events. They sponsor teams, show up at tournaments, and have genuine relationships with the families GameChanger serves. They currently have no path onto the platform.</p>
+      <p>Battle Juice sponsors teams. Our logo is on their jerseys. Our rep is at the field with a GoPro. We have a wrapped trailer we bring to events. We would gladly set teams up on GameChanger ourselves just to be part of the digital experience surrounding those kids. <strong>Right now there is no path for us to exist on the platform.</strong></p>
+      <p>A brand account tier — sponsor profiles, videographer permissions tied to sponsored teams, in-app activation posts, targeted reach — is a natural extension of existing infrastructure. It opens a new revenue line from a category of sponsors who currently have no way to participate.</p>
+    </div>
+    <div class="opp-callout">
+      <strong>The on-site play:</strong> A sponsor streams the game at the event on a screen at their booth. Their brand is the reason families are watching live at the field. That is a brand moment that no other youth sports platform is positioned to create — and it starts from infrastructure GameChanger already has.
+    </div>
+  </div>
+
+  <div class="opp-block accent">
+    <div class="opp-number">02</div>
+    <span class="opp-tag">Hard Problem · COPPA · NIL · Trust Infrastructure</span>
+    <span class="opp-tag" style="margin-left:8px; background:rgba(0,101,84,0.15); color:#006554;">New subscription tier required</span>
+    <h2 class="opp-title">Youth NIL, done right — by the only platform with the trust to do it.</h2>
+    <div class="opp-body">
+      <p>The youth NIL space is real and growing. LakePoint Sports launched an NIL-inspired program in June 2025 pairing elite youth players with 60+ brand partners. Research already shows that youth athletes spending significant time on NIL content face higher rates of mental health challenges — meaning the design of any such product carries real responsibility.</p>
+      <p>GameChanger already has <strong>COPPA compliance infrastructure, verified family relationships, and the trust of millions of families.</strong> No brand-side startup can replicate that. A well-designed youth NIL layer — strict parental consent at every step, no direct monetization of minors, brand matching that benefits the program rather than the individual, production handled outside the athlete — could be the most responsible implementation of this idea that exists.</p>
+      <p>This is not a simple engineering problem. It is a compliance problem, a product design problem, and a brand trust problem simultaneously. I have spent meaningful time thinking through the architecture and the failure modes. If GameChanger decides to build here, I would want to be part of that conversation.</p>
+    </div>
+    <div class="opp-callout">
+      <strong>Why GameChanger wins here:</strong> Nobody else has the verified parent-child relationships already in place at scale. The COPPA infrastructure is the moat. Building on top of it is table stakes compared to any competitor trying to build from scratch.
+    </div>
+  </div>
+</section>
+
+<section class="market-section">
+  <div class="market-inner">
+    <div class="section-label">The Market Context</div>
+    <h2 class="section-title">GameChanger is barely getting started.</h2>
+    <div class="market-stats">
+      <div class="mstat">
+        <div class="mstat-num">9%</div>
+        <div class="mstat-label">Estimated current market share in youth sports streaming</div>
+        <div class="mstat-note">Per Sameer Ahuja, Buying Sandlot podcast</div>
+      </div>
+      <div class="mstat">
+        <div class="mstat-num">40%</div>
+        <div class="mstat-label">CAGR since 2017</div>
+        <div class="mstat-note">Maintained through pandemic, product evolution, and platform expansion</div>
+      </div>
+      <div class="mstat">
+        <div class="mstat-num">$150M</div>
+        <div class="mstat-label">Revenue target for 2025 following $100M+ in 2024</div>
+        <div class="mstat-note">Per CNBC reporting on Dick's earnings calls</div>
+      </div>
+    </div>
+    <div class="market-quote">
+      "Every month or two on GameChanger, more games are covered than have been played in the entire history of American professional sports."
+      <cite>— Sameer Ahuja, President, GameChanger</cite>
+    </div>
+  </div>
+</section>
+
+<section class="close-cta">
+  <h2 class="cta-title">Not just a job.<br>The right place<br><em>to build.</em></h2>
+  <p class="cta-body">Our advisors are transitioning Battle Juice into a multi-year distribution plan. That creates the space for me to go all in somewhere that matters. GameChanger is where I want to build.</p>
+  <a href="about.html" class="cta-btn">Read My Full Story →</a>
+  <div class="cta-sub">battlejuice.com · Rochester / Shelby Township, Michigan</div>
+</section>
+
+<footer>
+  <div class="page-footer">
+    <div class="footer-left">Anthony × GameChanger <span>Rochester / Shelby Township, Michigan · 2026</span></div>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="engineering.html">Engineering</a>
+      <a href="brand.html">Brand</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

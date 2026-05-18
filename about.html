@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Anthony × GameChanger</title>
+<meta name="description" content="Anthony — Senior Backend Engineer candidate for GameChanger. Engineer, founder, and youth sports operator.">
+<link rel="icon" href="assets/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#006554">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Anthony × GameChanger">
+<meta property="og:title" content="About — Anthony × GameChanger">
+<meta property="og:description" content="Senior Backend Engineer · Subscriptions Enablement. Built production systems at scale. Founder inside youth sports.">
+<meta property="og:url" content="https://adventurini.github.io/gamechanger/">
+<meta property="og:image" content="https://adventurini.github.io/gamechanger/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://adventurini.github.io/gamechanger/assets/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gc-green: #006554;
+    --gc-green-light: #00876e;
+    --gc-green-dark: #004a3d;
+    --cream: #f5f0e8;
+    --off-white: #fafaf7;
+    --charcoal: #1a1a1a;
+    --mid: #555;
+    --light: #999;
+    --accent: #00c49a;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased; background: var(--off-white); color: var(--charcoal); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 64px;
+    background: rgba(250,250,247,0.95); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,101,84,0.1);
+  }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.06em; color: var(--gc-green); text-decoration: none; }
+  .nav-logo span { color: var(--charcoal); }
+  .nav-links { display: flex; gap: 8px; }
+  .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--mid); text-decoration: none; padding: 6px 14px; border-radius: 100px; transition: all 0.2s; }
+  .nav-links a:hover { color: var(--gc-green); background: rgba(0,101,84,0.07); }
+  .nav-links a.active { color: var(--gc-green); background: rgba(0,101,84,0.1); }
+  .nav-cta { font-family: 'Bebas Neue', sans-serif; font-size: 13px; font-weight: 700; color: white; background: var(--gc-green); padding: 8px 20px; border-radius: 100px; text-decoration: none; }
+  .nav-cta:hover { background: var(--gc-green-light); }
+
+  /* PAGE HEADER */
+  .page-header {
+    padding: 140px 80px 80px;
+    background: var(--cream);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .page-header-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
+  .eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gc-green); margin-bottom: 20px; }
+  .page-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 5vw, 72px); font-weight: 800; line-height: 1; color: var(--charcoal); }
+  .page-subtitle { font-size: 17px; line-height: 1.65; color: var(--mid); }
+
+  /* TIMELINE */
+  .timeline-section { padding: 100px 80px; max-width: 1200px; margin: 0 auto; }
+  .timeline { position: relative; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gc-green), transparent);
+  }
+  .timeline-item {
+    padding-left: 48px;
+    padding-bottom: 64px;
+    position: relative;
+  }
+  .timeline-dot {
+    position: absolute;
+    left: -6px; top: 6px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--gc-green);
+    border: 3px solid var(--off-white);
+    box-shadow: 0 0 0 2px var(--gc-green);
+  }
+  .timeline-year {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gc-green);
+    margin-bottom: 10px;
+  }
+  .timeline-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .timeline-body {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--mid);
+    max-width: 600px;
+  }
+  .timeline-body p + p { margin-top: 14px; }
+  .timeline-body strong { color: var(--charcoal); font-weight: 500; }
+  .timeline-tag {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+    background: rgba(0,101,84,0.08);
+    color: var(--gc-green);
+  }
+  .timeline-tag + .timeline-tag { margin-left: 6px; }
+
+  /* PIVOT CALLOUT */
+  .pivot-callout {
+    background: var(--gc-green);
+    border-radius: 24px;
+    padding: 48px;
+    margin: 64px 0;
+  }
+  .pivot-callout-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 16px;
+  }
+  .pivot-callout-body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.75);
+    max-width: 600px;
+  }
+
+  /* TRAITS GRID */
+  .traits-section { padding: 80px; background: var(--charcoal); }
+  .traits-inner { max-width: 1200px; margin: 0 auto; }
+  .traits-header { margin-bottom: 56px; }
+  .traits-header .eyebrow { color: var(--accent); }
+  .traits-header .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 36px; font-weight: 800; color: white; margin-top: 12px; }
+  .traits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .trait-card {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 32px;
+  }
+  .trait-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.07);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .trait-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 12px;
+  }
+  .trait-body { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.55); }
+
+  /* FOOTER */
+  .page-footer { padding: 60px 80px; display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(0,0,0,0.08); }
+  .footer-left { font-family: 'Bebas Neue', sans-serif; font-size: 13px; font-weight: 700; color: var(--gc-green); }
+  .footer-left span { color: var(--light); font-weight: 400; font-family: 'DM Sans', sans-serif; display: block; margin-top: 4px; font-size: 13px; }
+  .footer-nav { display: flex; gap: 24px; }
+  .footer-nav a { font-size: 13px; color: var(--light); text-decoration: none; }
+  .footer-nav a:hover { color: var(--gc-green); }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  .page-title { animation: fadeUp 0.6s ease forwards; }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+
+    /* Hero - index */
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 80px 28px 56px; }
+    .hero-right { min-height: 380px; }
+    .hero-photo { width: 80%; max-width: 300px; }
+    .hero-badge { top: 24px; left: 20px; padding: 10px 14px; }
+    .hero-badge2 { bottom: 24px; right: 16px; padding: 10px 14px; }
+    .hero-badge-val, .hero-badge2-val { font-size: 13px; }
+    .hero-stats { gap: 20px; flex-wrap: wrap; }
+    .stat-num { font-size: 22px; }
+
+    /* Intro section */
+    .intro-section { grid-template-columns: 1fr; gap: 24px; padding: 60px 28px; }
+
+    /* Roles strip */
+    .roles-strip { padding: 56px 28px; }
+    .roles-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* GC context */
+    .gc-context { padding: 60px 28px; }
+    .gc-numbers { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .gc-num { font-size: 36px; }
+
+    /* Page header (about/engineering/brand) */
+    .page-header { padding: 100px 28px 56px; }
+    .page-header-inner { grid-template-columns: 1fr; gap: 24px; }
+    .header-left, .header-right { padding: 48px 28px; }
+    .page-header.split { grid-template-columns: 1fr; }
+
+    /* Split header (brand page) */
+    .page-header { grid-template-columns: 1fr !important; }
+
+    /* Timeline */
+    .timeline-section { padding: 60px 28px; }
+    .timeline::before { left: 0; }
+    .timeline-item { padding-left: 32px; padding-bottom: 48px; }
+
+    /* Traits */
+    .traits-section { padding: 56px 28px; }
+    .traits-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Stack */
+    .stack-section { padding: 60px 28px; }
+    .stack-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* Code section */
+    .code-section { padding: 60px 28px; }
+    .code-section-inner { grid-template-columns: 1fr; gap: 48px; }
+    .code-body { font-size: 11px; padding: 16px; overflow-x: auto; }
+
+    /* Build section */
+    .build-section { padding: 60px 28px; }
+    .build-grid { grid-template-columns: 1fr; }
+
+    /* Insight cards */
+    .insights-section { padding: 0 28px 60px; }
+    .insight-card { grid-template-columns: 1fr; gap: 0; padding: 28px; }
+    .insight-num { font-size: 28px; margin-bottom: 12px; }
+
+    /* Diagram */
+    .diagram-section { padding: 60px 28px; }
+    .diagram-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Vision page */
+    .vision-hero { padding: 110px 28px 60px; }
+    .leadership-section { padding: 56px 28px; }
+    .leadership-grid { grid-template-columns: 1fr; gap: 20px; }
+    .opportunity { padding: 28px 28px 0; }
+    .opp-block { padding: 40px 28px; }
+    .opp-number { font-size: 48px; top: 20px; right: 24px; }
+    .market-section { padding: 60px 28px; }
+    .market-stats { grid-template-columns: 1fr; gap: 36px; }
+    .mstat-num { font-size: 48px; }
+    .close-cta { padding: 80px 28px; }
+    .market-quote { font-size: 18px; }
+
+    /* Dedication band */
+    .dedication-band { padding: 20px 28px; }
+    .dedication-inner { flex-wrap: wrap; gap: 8px; }
+
+    /* Footer */
+    .page-footer { padding: 40px 28px; flex-direction: column; gap: 24px; align-items: flex-start; }
+
+    /* Pivot callout */
+    .pivot-callout { padding: 32px 24px; }
+
+    /* Section divider */
+    .section-divider { padding: 60px 28px; }
+
+    /* Two col */
+    .two-col { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  @media (max-width: 480px) {
+    .stack-grid { grid-template-columns: 1fr; }
+    .gc-numbers { grid-template-columns: 1fr; }
+    .hero-name { font-size: 42px; }
+    .vision-title { font-size: 42px; }
+    .opp-title { font-size: 24px; }
+    .cta-title { font-size: 36px; }
+    .page-title { font-size: 36px; }
+    .page-title-white { font-size: 36px; }
+  }
+
+
+
+  .nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gc-green, #006554);
+    padding: 4px;
+  }
+  @media (max-width: 768px) {
+    .nav-hamburger { display: flex; align-items: center; }
+    .nav-cta { display: none; }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: white;
+      flex-direction: column;
+      padding: 16px 20px 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      gap: 4px;
+      z-index: 99;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .nav-links.nav-open { display: flex; }
+    .nav-links a {
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Anthony<span> × GC</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="engineering.html">Engineering</a>
+    <a href="brand.html">Brand & Marketing</a>
+    <a href="vision.html">Vision</a>
+  </div>
+  <a href="vision.html" class="nav-cta">The Pitch →</a>
+
+  <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')" aria-label="Menu">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect y="3" width="22" height="2" rx="1" fill="currentColor"/><rect y="10" width="22" height="2" rx="1" fill="currentColor"/><rect y="17" width="22" height="2" rx="1" fill="currentColor"/></svg>
+  </button>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div>
+      <div class="eyebrow">Background</div>
+      <h1 class="page-title">Who I am & how I got here.</h1>
+    </div>
+    <div class="page-subtitle">
+      I started programming in high school and spent the better part of a decade building production systems nearly solo. The experience shaped how I think about architecture, ownership, and what it means to ship something that actually works.
+    </div>
+  </div>
+</div>
+
+<section class="timeline-section">
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">High School → Early Career</div>
+      <h3 class="timeline-heading">Started with a text editor and a dial-up connection.</h3>
+      <div class="timeline-body">
+        <p>I started programming in high school — HTML, CSS, Dreamweaver. Built websites for local businesses before most people knew what a CMS was. No bootcamp. No computer science degree. Self-taught and problem-driven from the start.</p>
+        <p>For years I developed that way — taking on whatever was in front of me, building until it worked, iterating until it was good.</p>
+      </div>
+      <span class="timeline-tag">HTML/CSS</span>
+      <span class="timeline-tag">Dreamweaver</span>
+      <span class="timeline-tag">Self-taught</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2019 — Riverguide</div>
+      <h3 class="timeline-heading">Head of Engineering at an Amazon agency. Built a production platform nearly from scratch.</h3>
+      <div class="timeline-body">
+        <p>I became Head of Engineering at Riverguide, an Amazon agency. With eventually one other engineer, I designed and built a platform from the ground up that <strong>ingested Amazon data daily</strong> and powered a team of 50+ agents with automations, manual configurations, dashboards, and reporting infrastructure.</p>
+        <p>This is where I mastered <strong>CTEs and advanced SQL</strong>, then became fluent across the full modern stack: Node.js, React, Next.js, GraphQL, and AWS infrastructure. I owned architecture decisions, deployment pipelines, and data modeling — all of it.</p>
+        <p>The platform handled real commercial scale, with real consequences when things broke. That environment sharpened my instincts around reliability, architecture, and ownership.</p>
+      </div>
+      <span class="timeline-tag">Node.js</span>
+      <span class="timeline-tag">React / Next.js</span>
+      <span class="timeline-tag">GraphQL</span>
+      <span class="timeline-tag">AWS</span>
+      <span class="timeline-tag">PostgreSQL / CTEs</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background: #cc4444; box-shadow: 0 0 0 2px #cc4444;"></div>
+      <div class="timeline-year">2023 — The Hard Stop</div>
+      <h3 class="timeline-heading">Parent agency went bankrupt. They walked away from everything we built.</h3>
+      <div class="timeline-body">
+        <p>The parent agency went under. The software — years of work, built with care — was left behind. It was a hard moment, but also a clarifying one.</p>
+        <div class="pivot-callout">
+          <div class="pivot-callout-title">The decision.</div>
+          <div class="pivot-callout-body">Rather than immediately returning to engineering, I made a deliberate choice to build something — going deep into the youth sports ecosystem as a founder and operator, learning the space in a way no job would have allowed.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2023 – Present · Battle Juice</div>
+      <h3 class="timeline-heading">Built a brand from zero. 15,000 kids sampled before launch. $1M+ raised.</h3>
+      <div class="timeline-body">
+        <p>Starting in 2023, I built a youth sports brand from the ground up — sponsoring teams, showing up at tournaments, and building direct relationships with leagues, recreation authorities, and families across Metro Detroit. We launched in September 2025.</p>
+        <p>I built all of the digital infrastructure myself: <strong>Next.js / Shopify storefront, sponsorship systems, affiliate structures, data models, and partnership tooling</strong>. Every tool, every page, every system.</p>
+        <p>Along the way we reached roughly 15,000 youth athletes directly before launch, signed anchor partnerships with local recreation authorities and soccer organizations, and closed over $1M in funding. The work gave me firsthand understanding of what families, coaches, and sponsors actually need from a platform like GameChanger.</p>
+      </div>
+      <span class="timeline-tag">Next.js</span>
+      <span class="timeline-tag">Shopify</span>
+      <span class="timeline-tag">Brand Operations</span>
+      <span class="timeline-tag">Youth Sports Distribution</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background: var(--accent); box-shadow: 0 0 0 2px var(--accent);"></div>
+      <div class="timeline-year">May 2026 — Now</div>
+      <h3 class="timeline-heading">Stepping into the right role at the right company.</h3>
+      <div class="timeline-body">
+        <p>Our advisors and investors are replacing the day-to-day distribution grind with a network of beverage distributors. That frees me to work brand awareness on nights and weekends as the face of Battle Juice — and to bring my full engineering capability to a company I have wanted to build for or compete with for years.</p>
+        <p><strong>I am not looking for a job. I am looking for the right place to build.</strong></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="traits-section">
+  <div class="traits-inner">
+    <div class="traits-header">
+      <div class="eyebrow">What makes me different</div>
+      <div class="section-title">Three things I bring that most engineers don't.</div>
+    </div>
+    <div class="traits-grid">
+      <div class="trait-card">
+        <div class="trait-num">01</div>
+        <div class="trait-title">Domain authority, earned in the field</div>
+        <div class="trait-body">Since 2023 I have operated inside the youth sports ecosystem as a founder, sponsor, and brand builder. I know what families respond to, what coaches need, and where the digital experience falls short — not from research, but from being in the field.</div>
+      </div>
+      <div class="trait-card">
+        <div class="trait-num">02</div>
+        <div class="trait-title">Full-stack, without the full team</div>
+        <div class="trait-body">I built production infrastructure that powered 50+ users daily, nearly alone. Without the luxury of specialization, I developed fluency across the full stack — frontend, backend, data pipelines, and deployment — and a deep understanding of how they interact.</div>
+      </div>
+      <div class="trait-card">
+        <div class="trait-num">03</div>
+        <div class="trait-title">Founder-brained in an engineer's body</div>
+        <div class="trait-body">Having operated as product manager, engineer, brand strategist, and sales rep simultaneously, I bring context to technical decisions that goes beyond the code. I know what the end user experiences, and I build accordingly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="page-footer">
+    <div class="footer-left">Anthony × GameChanger <span>Rochester / Shelby Township, Michigan · 2026</span></div>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="engineering.html">Engineering</a>
+      <a href="brand.html">Brand</a>
+      <a href="vision.html">Vision</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

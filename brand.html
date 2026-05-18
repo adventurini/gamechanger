@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand & Marketing — Anthony × GameChanger</title>
+<meta name="description" content="Anthony — Senior Backend Engineer candidate for GameChanger. Engineer, founder, and youth sports operator.">
+<link rel="icon" href="assets/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#006554">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Anthony × GameChanger">
+<meta property="og:title" content="Brand & Marketing — Anthony × GameChanger">
+<meta property="og:description" content="Senior Backend Engineer · Subscriptions Enablement. Built production systems at scale. Founder inside youth sports.">
+<meta property="og:url" content="https://adventurini.github.io/gamechanger/">
+<meta property="og:image" content="https://adventurini.github.io/gamechanger/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://adventurini.github.io/gamechanger/assets/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gc-green: #006554; --gc-green-light: #00876e;
+    --cream: #f5f0e8; --off-white: #fafaf7;
+    --charcoal: #1a1a1a; --mid: #555; --light: #999; --accent: #00c49a;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased; background: var(--off-white); color: var(--charcoal); overflow-x: hidden; }
+
+  nav { position: fixed; top:0; left:0; right:0; z-index:100; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 64px; background: rgba(250,250,247,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,101,84,0.1); }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.06em; color: var(--gc-green); text-decoration: none; }
+  .nav-logo span { color: var(--charcoal); }
+  .nav-links { display: flex; gap: 8px; }
+  .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--mid); text-decoration: none; padding: 6px 14px; border-radius: 100px; transition: all 0.2s; }
+  .nav-links a:hover { color: var(--gc-green); background: rgba(0,101,84,0.07); }
+  .nav-links a.active { color: var(--gc-green); background: rgba(0,101,84,0.1); }
+  .nav-cta { font-family: 'Bebas Neue', sans-serif; font-size: 13px; font-weight: 700; color: white; background: var(--gc-green); padding: 8px 20px; border-radius: 100px; text-decoration: none; }
+
+  /* SPLIT HEADER */
+  .page-header { padding-top: 64px; display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; }
+  .header-left { background: var(--cream); padding: 80px; display: flex; flex-direction: column; justify-content: center; }
+  .header-right { background: var(--gc-green); padding: 80px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+  .header-right::before { content:''; position:absolute; top:-80px; right:-80px; width:320px; height:320px; background:rgba(255,255,255,0.05); border-radius:50%; }
+  .eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gc-green); margin-bottom: 20px; }
+  .eyebrow-white { font-family: 'Bebas Neue', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+  .page-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 4vw, 56px); font-weight: 800; line-height: 1.05; color: var(--charcoal); }
+  .page-title-white { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 4vw, 56px); font-weight: 800; line-height: 1.05; color: white; }
+  .header-right-body { font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.7); margin-top: 24px; max-width: 420px; position: relative; z-index:1; }
+
+  /* DEDICATION BAND */
+  .dedication-band { background: var(--charcoal); padding: 24px 80px; }
+  .dedication-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 16px; }
+  .dedication-label { font-family: 'Bebas Neue', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+  .dedication-name { font-family: 'Bebas Neue', sans-serif; font-size: 16px; font-weight: 800; color: white; }
+  .dedication-role { font-size: 13px; color: rgba(255,255,255,0.5); }
+  .sep { color: rgba(255,255,255,0.2); font-size: 20px; }
+
+  /* PERSPECTIVE SECTION */
+  .perspective-section { padding: 100px 80px; max-width: 1200px; margin: 0 auto; }
+  .section-label { font-family: 'Bebas Neue', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gc-green); margin-bottom: 16px; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 3vw, 40px); font-weight: 800; line-height: 1.15; color: var(--charcoal); margin-bottom: 48px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .col-body { font-size: 15px; line-height: 1.75; color: var(--mid); }
+  .col-body p + p { margin-top: 18px; }
+  .col-body strong { color: var(--charcoal); font-weight: 500; }
+
+  /* INSIGHT CARDS */
+  .insights-section { padding: 0 80px 100px; max-width: 1200px; margin: 0 auto; }
+  .insight-stack { display: flex; flex-direction: column; gap: 2px; }
+  .insight-card {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 20px;
+    padding: 40px 48px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    align-items: start;
+    transition: all 0.2s;
+    margin-bottom: 16px;
+  }
+  .insight-card:hover { border-color: var(--gc-green); box-shadow: 0 8px 40px rgba(0,101,84,0.06); }
+  .insight-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: rgba(0,0,0,0.06);
+    line-height: 1;
+    padding-top: 4px;
+  }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; font-weight: 800; color: var(--charcoal); margin-bottom: 16px; }
+  .insight-body { font-size: 15px; line-height: 1.7; color: var(--mid); }
+  .insight-body strong { color: var(--charcoal); font-weight: 500; }
+  .insight-tag {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+    background: rgba(0,101,84,0.08);
+    color: var(--gc-green);
+  }
+
+  /* BRAND PRESENCE DIAGRAM */
+  .diagram-section { background: var(--charcoal); padding: 100px 80px; }
+  .diagram-inner { max-width: 1200px; margin: 0 auto; }
+  .diagram-inner .section-label { color: var(--accent); }
+  .diagram-inner .section-title { color: white; }
+  .diagram-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; }
+  .diag-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 32px; }
+  .diag-step { font-family: 'Bebas Neue', sans-serif; font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+  .diag-title { font-family: 'Bebas Neue', sans-serif; font-size: 18px; font-weight: 800; color: white; margin-bottom: 14px; }
+  .diag-body { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.55); }
+
+  .page-footer { padding: 60px 80px; display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(0,0,0,0.08); }
+  .footer-left { font-family: 'Bebas Neue', sans-serif; font-size: 13px; font-weight: 700; color: var(--gc-green); }
+  .footer-left span { color: var(--light); font-weight: 400; font-family: 'DM Sans', sans-serif; display: block; margin-top: 4px; font-size: 13px; }
+  .footer-nav { display: flex; gap: 24px; }
+  .footer-nav a { font-size: 13px; color: var(--light); text-decoration: none; }
+  .footer-nav a:hover { color: var(--gc-green); }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+
+    /* Hero - index */
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 80px 28px 56px; }
+    .hero-right { min-height: 380px; }
+    .hero-photo { width: 80%; max-width: 300px; }
+    .hero-badge { top: 24px; left: 20px; padding: 10px 14px; }
+    .hero-badge2 { bottom: 24px; right: 16px; padding: 10px 14px; }
+    .hero-badge-val, .hero-badge2-val { font-size: 13px; }
+    .hero-stats { gap: 20px; flex-wrap: wrap; }
+    .stat-num { font-size: 22px; }
+
+    /* Intro section */
+    .intro-section { grid-template-columns: 1fr; gap: 24px; padding: 60px 28px; }
+
+    /* Roles strip */
+    .roles-strip { padding: 56px 28px; }
+    .roles-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* GC context */
+    .gc-context { padding: 60px 28px; }
+    .gc-numbers { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .gc-num { font-size: 36px; }
+
+    /* Page header (about/engineering/brand) */
+    .page-header { padding: 100px 28px 56px; }
+    .page-header-inner { grid-template-columns: 1fr; gap: 24px; }
+    .header-left, .header-right { padding: 48px 28px; }
+    .page-header.split { grid-template-columns: 1fr; }
+
+    /* Split header (brand page) */
+    .page-header { grid-template-columns: 1fr !important; }
+
+    /* Timeline */
+    .timeline-section { padding: 60px 28px; }
+    .timeline::before { left: 0; }
+    .timeline-item { padding-left: 32px; padding-bottom: 48px; }
+
+    /* Traits */
+    .traits-section { padding: 56px 28px; }
+    .traits-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Stack */
+    .stack-section { padding: 60px 28px; }
+    .stack-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* Code section */
+    .code-section { padding: 60px 28px; }
+    .code-section-inner { grid-template-columns: 1fr; gap: 48px; }
+    .code-body { font-size: 11px; padding: 16px; overflow-x: auto; }
+
+    /* Build section */
+    .build-section { padding: 60px 28px; }
+    .build-grid { grid-template-columns: 1fr; }
+
+    /* Insight cards */
+    .insights-section { padding: 0 28px 60px; }
+    .insight-card { grid-template-columns: 1fr; gap: 0; padding: 28px; }
+    .insight-num { font-size: 28px; margin-bottom: 12px; }
+
+    /* Diagram */
+    .diagram-section { padding: 60px 28px; }
+    .diagram-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Vision page */
+    .vision-hero { padding: 110px 28px 60px; }
+    .leadership-section { padding: 56px 28px; }
+    .leadership-grid { grid-template-columns: 1fr; gap: 20px; }
+    .opportunity { padding: 28px 28px 0; }
+    .opp-block { padding: 40px 28px; }
+    .opp-number { font-size: 48px; top: 20px; right: 24px; }
+    .market-section { padding: 60px 28px; }
+    .market-stats { grid-template-columns: 1fr; gap: 36px; }
+    .mstat-num { font-size: 48px; }
+    .close-cta { padding: 80px 28px; }
+    .market-quote { font-size: 18px; }
+
+    /* Dedication band */
+    .dedication-band { padding: 20px 28px; }
+    .dedication-inner { flex-wrap: wrap; gap: 8px; }
+
+    /* Footer */
+    .page-footer { padding: 40px 28px; flex-direction: column; gap: 24px; align-items: flex-start; }
+
+    /* Pivot callout */
+    .pivot-callout { padding: 32px 24px; }
+
+    /* Section divider */
+    .section-divider { padding: 60px 28px; }
+
+    /* Two col */
+    .two-col { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  @media (max-width: 480px) {
+    .stack-grid { grid-template-columns: 1fr; }
+    .gc-numbers { grid-template-columns: 1fr; }
+    .hero-name { font-size: 42px; }
+    .vision-title { font-size: 42px; }
+    .opp-title { font-size: 24px; }
+    .cta-title { font-size: 36px; }
+    .page-title { font-size: 36px; }
+    .page-title-white { font-size: 36px; }
+  }
+
+
+
+  .nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gc-green, #006554);
+    padding: 4px;
+  }
+  @media (max-width: 768px) {
+    .nav-hamburger { display: flex; align-items: center; }
+    .nav-cta { display: none; }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: white;
+      flex-direction: column;
+      padding: 16px 20px 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      gap: 4px;
+      z-index: 99;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .nav-links.nav-open { display: flex; }
+    .nav-links a {
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Anthony<span> × GC</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="engineering.html">Engineering</a>
+    <a href="brand.html" class="active">Brand & Marketing</a>
+    <a href="vision.html">Vision</a>
+  </div>
+  <a href="vision.html" class="nav-cta">The Pitch →</a>
+
+  <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')" aria-label="Menu">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect y="3" width="22" height="2" rx="1" fill="currentColor"/><rect y="10" width="22" height="2" rx="1" fill="currentColor"/><rect y="17" width="22" height="2" rx="1" fill="currentColor"/></svg>
+  </button>
+</nav>
+
+<div class="page-header">
+  <div class="header-left">
+    <div class="eyebrow">Brand & Marketing</div>
+    <h1 class="page-title">I know what brands<br>need from this platform.</h1>
+  </div>
+  <div class="header-right">
+    <div class="eyebrow-white">The Gap</div>
+    <h2 class="page-title-white">GameChanger's advertising product serves national brands well. The regional and local brands already embedded at youth sports events — sponsoring teams, showing up at tournaments — don't yet have a clear path onto the platform.</h2>
+    <p class="header-right-body">That gap represents a real commercial opportunity — and one I understand from the inside.</p>
+  </div>
+</div>
+
+<div class="dedication-band">
+  <div class="dedication-inner">
+    <div class="dedication-label">In service of</div>
+    <div class="sep">—</div>
+    <div>
+      <div class="dedication-name">Cynthia Kleinbaum Milner</div>
+      <div class="dedication-role">Chief Commercial Officer · GameChanger · prev. CMO MoneyLion, VP Marketing Walmart+</div>
+    </div>
+  </div>
+</div>
+
+<section class="perspective-section">
+  <div class="section-label">My Perspective</div>
+  <h2 class="section-title">Perspective built on the ground.</h2>
+  <div class="two-col">
+    <div class="col-body">
+      <p>Battle Juice sponsors youth sports teams across Metro Detroit. Our logo is on jerseys. We show up to tournaments in a wrapped Cybertruck and a branded concession trailer. We have been on the ground at fields and gyms since before we ever sold a unit.</p>
+      <p>That gives me something most hires don't: <strong>a firsthand understanding of what youth sports parents actually respond to</strong>, built through direct contact on the ground rather than research alone.</p>
+    </div>
+    <div class="col-body">
+      <p>Through building a youth sports brand since 2023, I know firsthand that regional sponsors have no clear path onto the GameChanger platform today. There is a channel of passionate, community-rooted sponsors that the current advertising product does not serve.</p>
+      <p>Cynthia built Walmart+. She understands distribution channel strategy at scale. This is a channel worth building — and I understand both the engineering and the brand side of what that takes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="insights-section">
+  <div class="section-label">What I'd bring to the commercial team</div>
+  <div class="insight-stack">
+
+    <div class="insight-card">
+      <div class="insight-num">01</div>
+      <div>
+        <div class="insight-title">Brand activation at the field level</div>
+        <div class="insight-body">
+          <p>GameChanger is a digital platform but the audience lives at physical events. Bridging those two worlds is a meaningful product opportunity. A sponsor who is already present at the field — running a booth, handing out samples, supporting the team — should be able to connect that moment to the families watching the game online.</p>
+          <p>That is a new class of content on the platform — one that deepens family engagement and creates a revenue line from thousands of sponsors who currently have no way to participate digitally.</p>
+        </div>
+        <span class="insight-tag">New Revenue Channel</span>
+        <span class="insight-tag">Field Activation</span>
+      </div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-num">02</div>
+      <div>
+        <div class="insight-title">Sponsor-as-videographer: the organic content play</div>
+        <div class="insight-body">
+          <p>GameChanger already allows coaches to designate videographers. A brand account could extend that naturally: a sponsor's rep shows up, records the game for the team they support, and gets credit for the content. <strong>The brand is present authentically. The family is served. GameChanger's content library grows.</strong></p>
+          <p>Display that stream on a screen at the event. That is a brand activation that no other digital platform in youth sports is positioned to enable — and it starts from infrastructure GameChanger already has.</p>
+        </div>
+        <span class="insight-tag">Content Strategy</span>
+        <span class="insight-tag">Sponsor Integration</span>
+      </div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-num">03</div>
+      <div>
+        <div class="insight-title">The "For the Sport of Love" campaign was the right instinct. Here's the next level.</div>
+        <div class="insight-body">
+          <p>GameChanger's first national campaign celebrated coaches and parents — the unsung heroes of youth sports. That is the right emotional register. The natural evolution is <strong>creating ways for brands to participate in that story authentically</strong>, rather than interrupting it with generic ad units.</p>
+          <p>A sponsor who streams a team's games, supports the family at the field, and builds genuine community presence — that is not advertising. It is participation. GameChanger is uniquely positioned to be the platform where that happens.</p>
+        </div>
+        <span class="insight-tag">Brand Storytelling</span>
+        <span class="insight-tag">Campaign Strategy</span>
+      </div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-num">04</div>
+      <div>
+        <div class="insight-title">The engineer who can execute what the marketing team designs</div>
+        <div class="insight-body">
+          <p>I can work either side of the product-to-engineering table. I can sit in a commercial strategy conversation, understand what the team is trying to build, and contribute to building it — without the translation lag that often slows that process down.</p>
+          <p>At a company growing at 40% CAGR with a CCO pushing into new commercial territory, that kind of cross-functional fluency has real value.</p>
+        </div>
+        <span class="insight-tag">Cross-functional</span>
+        <span class="insight-tag">Build + Strategy</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="diagram-section">
+  <div class="diagram-inner">
+    <div class="section-label">The Brand Presence Flow</div>
+    <h2 class="section-title">How a regional sponsor would operate on GameChanger.</h2>
+    <div class="diagram-grid">
+      <div class="diag-card">
+        <div class="diag-step">Step 01 · Setup</div>
+        <div class="diag-title">Brand creates a sponsor account</div>
+        <div class="diag-body">Verified brand profile. Links to the teams they sponsor. Rep is designated as videographer for those teams. Profile is visible to families who follow those teams.</div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-step">Step 02 · Game Day</div>
+        <div class="diag-title">Brand rep records and streams the game</div>
+        <div class="diag-body">A brand rep shows up and streams using their GameChanger account. The brand receives attribution for the content. Families watching experience the sponsor as a community participant, not an interrupter.</div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-step">Step 03 · Activation</div>
+        <div class="diag-title">Brand posts the event activation</div>
+        <div class="diag-body">Post an in-app activation tied to the game location. A product sample station, a tent, a giveaway — contextual and visible to families already engaged with the game.</div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-step">Step 04 · Boost</div>
+        <div class="diag-title">Brand amplifies to targeted audiences</div>
+        <div class="diag-body">Boost posts. Target by sport, age group, and metro area. Advertise sponsorship availability to coaches and league organizers. The most relevant audience is already on the platform.</div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-step">Step 05 · Measure</div>
+        <div class="diag-title">Closed-loop attribution</div>
+        <div class="diag-body">GameChanger already has impression data, stream views, and team follower data. A brand analytics layer closes the loop — showing sponsors what their presence produced in actual engagement and reach.</div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-step">Step 06 · Scale</div>
+        <div class="diag-title">Every local brand in America has this path</div>
+        <div class="diag-body">Thousands of regional brands sponsor youth sports teams. None of them have a clear path onto GameChanger today. This opens that door.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="page-footer">
+    <div class="footer-left">Anthony × GameChanger <span>Rochester / Shelby Township, Michigan · 2026</span></div>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="engineering.html">Engineering</a>
+      <a href="vision.html">Vision</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
